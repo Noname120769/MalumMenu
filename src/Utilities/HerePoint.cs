@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public class HerePoint
 {
     public PlayerControl player;

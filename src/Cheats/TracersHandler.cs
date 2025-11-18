@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public static class TracersHandler
 {
     public static void drawPlayerTracer(PlayerPhysics playerPhysics){

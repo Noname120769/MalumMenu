@@ -1,4 +1,4 @@
-namespace MalumMenu;
+namespace IdkMenu;
 public static class MalumSabotageSystem
 {
     public static bool reactorSab;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Il2CppSystem.Collections.Generic;
 
-namespace MalumMenu
+namespace IdkMenu
 {
     public class ConsoleUI : MonoBehaviour
     {
@@ -40,11 +40,11 @@ namespace MalumMenu
 
             Color configUIColor;
         
-            if(ColorUtility.TryParseHtmlString(MalumMenu.menuHtmlColor.Value, out configUIColor)){
+            if(ColorUtility.TryParseHtmlString(IdkMenu.menuHtmlColor.Value, out configUIColor)){
                 GUI.backgroundColor = configUIColor;
             }
 
-            windowRect = GUI.Window(1, windowRect, (GUI.WindowFunction)ConsoleWindow, "MalumConsole");
+            windowRect = GUI.Window(1, windowRect, (GUI.WindowFunction)ConsoleWindow, "IdkConsole");
         }
 
         private void ConsoleWindow(int windowID)

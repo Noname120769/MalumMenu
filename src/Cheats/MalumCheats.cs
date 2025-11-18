@@ -1,7 +1,7 @@
 using Sentry.Internal.Extensions;
 using UnityEngine;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public static class MalumCheats
 {
     public static void closeMeetingCheat()

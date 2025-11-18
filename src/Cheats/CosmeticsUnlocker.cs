@@ -1,4 +1,4 @@
-namespace MalumMenu;
+namespace IdkMenu;
 public static class CosmeticsUnlocker
 {
     public static void unlockCosmetics(HatManager hatManager){

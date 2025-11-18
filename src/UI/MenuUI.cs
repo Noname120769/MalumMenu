@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public class MenuUI : MonoBehaviour
 {
 
@@ -144,7 +144,7 @@ public class MenuUI : MonoBehaviour
 
     private void Update(){
 
-        if (Input.GetKeyDown(Utils.stringToKeycode(MalumMenu.menuKeybind.Value)))
+        if (Input.GetKeyDown(Utils.stringToKeycode(IdkMenu.menuKeybind.Value)))
         {
             //Enable-disable GUI with DELETE key
             isGUIActive = !isGUIActive;
@@ -204,7 +204,7 @@ public class MenuUI : MonoBehaviour
 
         Color uiColor;
 
-        string configHtmlColor = MalumMenu.menuHtmlColor.Value;
+        string configHtmlColor = IdkMenu.menuHtmlColor.Value;
 
         if (!ColorUtility.TryParseHtmlString(configHtmlColor, out uiColor))
         {
@@ -221,7 +221,7 @@ public class MenuUI : MonoBehaviour
             GUI.backgroundColor = uiColor;
         }
 
-        windowRect = GUI.Window(0, windowRect, (GUI.WindowFunction)WindowFunction, "MalumMenu v" + MalumMenu.malumVersion);
+        windowRect = GUI.Window(0, windowRect, (GUI.WindowFunction)WindowFunction, "IdkMenu v" + IdkMenu.malumVersion);
     }
 
     public void WindowFunction(int windowID)

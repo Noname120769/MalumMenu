@@ -1,7 +1,7 @@
 using UnityEngine;
 using Sentry.Internal.Extensions;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public static class MalumESP
 {
     public static bool freecamActive;

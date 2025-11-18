@@ -3,7 +3,7 @@ using System;
 using AmongUs.GameOptions;
 using UnityEngine;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public static class MalumPPMCheats
 {
     public static bool telekillPlayerActive;

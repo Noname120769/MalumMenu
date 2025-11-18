@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using BepInEx.Configuration;
 using HarmonyLib;
 
-namespace MalumMenu;
+namespace IdkMenu;
 
 [BepInAutoPlugin]
 [BepInProcess("Among Us.exe")]
-public partial class MalumMenu : BasePlugin
+public partial class IdkMenu : BasePlugin
 {
     public Harmony Harmony { get; } = new(Id);
     public static string malumVersion = "2.4.2";
@@ -32,42 +32,42 @@ public partial class MalumMenu : BasePlugin
     {
 
         //Load config settings
-        menuKeybind = Config.Bind("MalumMenu.GUI",
+        menuKeybind = Config.Bind("IdkMenu.GUI",
                                 "Keybind",
                                 "Delete",
                                 "The keyboard key used to toggle the GUI on and off. List of supported keycodes: https://docs.unity3d.com/Packages/com.unity.tiny@0.16/api/Unity.Tiny.Input.KeyCode.html");
 
-        menuHtmlColor = Config.Bind("MalumMenu.GUI",
+        menuHtmlColor = Config.Bind("IdkMenu.GUI",
                                 "Color",
                                 "",
-                                "A custom color for your MalumMenu GUI. Supports html color codes");
+                    "A custom color for your IdkMenu GUI. Supports html color codes");
 
-        guestMode = Config.Bind("MalumMenu.GuestMode",
+        guestMode = Config.Bind("IdkMenu.GuestMode",
                                 "GuestMode",
                                 false,
                                 "When enabled, a new guest account will generate every time you start the game, allowing you to bypass account bans and PUID detection");
         
-        guestFriendCode = Config.Bind("MalumMenu.GuestMode",
+        guestFriendCode = Config.Bind("IdkMenu.GuestMode",
                                 "FriendName",
                                 "",
                                 "The username that will be used when setting a friend code for your guest account. IMPORTANT: Can only be used with GuestMode, needs to be ≤ 10 characters, and cannot include special characters/discriminator (#1234)");
         
-        spoofLevel = Config.Bind("MalumMenu.Spoofing",
+        spoofLevel = Config.Bind("IdkMenu.Spoofing",
                                 "Level",
                                 "",
                                 "A custom player level to display to others in online games to hide your actual platform. IMPORTANT: Custom levels can only be within 0 and 4294967295. Decimal numbers will not work");
         
-        spoofPlatform = Config.Bind("MalumMenu.Spoofing",
+        spoofPlatform = Config.Bind("IdkMenu.Spoofing",
                                 "Platform",
                                 "",
                                 "A custom gaming platform to display to others in online lobbies to hide your actual platform. List of supported platforms: https://skeld.js.org/enums/constant.Platform.html");
 
-        spoofDeviceId = Config.Bind("MalumMenu.Privacy",
+        spoofDeviceId = Config.Bind("IdkMenu.Privacy",
                                 "HideDeviceId",
                                 true,
                                 "When enabled it will hide your unique deviceId from Among Us, which could potentially help bypass hardware bans in the future");
 
-        noTelemetry = Config.Bind("MalumMenu.Privacy",
+        noTelemetry = Config.Bind("IdkMenu.Privacy",
                                 "NoTelemetry",
                                 true,
                                 "When enabled it will stop Among Us from collecting analytics of your games and sending them to Innersloth using Unity Analytics");
@@ -96,7 +96,7 @@ public partial class MalumMenu : BasePlugin
 
                 //Warn about unsupported AU versions
                 if (!supportedAU.Contains(Application.version)){
-                    Utils.showPopup("\nThis version of MalumMenu and this version of Among Us are incompatible\n\nInstall the right version to avoid problems");
+                    Utils.showPopup("\nThis version of IdkMenu and this version of Among Us are incompatible\n\nInstall the right version to avoid problems");
                 }
             }
         }));

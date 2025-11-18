@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Security.Cryptography;
 
-namespace MalumMenu;
+namespace IdkMenu;
 
 [HarmonyPatch(typeof(PlatformSpecificData), nameof(PlatformSpecificData.Serialize))]
 public static class PlatformSpecificData_Serialize
@@ -56,7 +56,7 @@ public static class SystemInfo_deviceUniqueIdentifier_Getter
     // Made to hide the user's real unique deviceId by generating a random fake one
     public static void Postfix(ref string __result)
     {
-        if (MalumMenu.spoofDeviceId.Value){
+        if (IdkMenu.spoofDeviceId.Value){
 
             var bytes = new byte[16];
             using (var rng = RandomNumberGenerator.Create())
@@ -79,7 +79,7 @@ public static class AmongUsClient_Update
         MalumSpoof.spoofLevel();
 
         // Code to treat temp accounts the same as full accounts, including access to friend codes
-        if (EOSManager.Instance.loginFlowFinished && MalumMenu.guestMode.Value){
+        if (EOSManager.Instance.loginFlowFinished && IdkMenu.guestMode.Value){
 
             DataManager.Player.Account.LoginStatus = EOSManager.AccountLoginStatus.LoggedIn;
 
@@ -102,14 +102,14 @@ public static class VersionShower_Start
     // Postfix patch of VersionShower.Start to show MalumMenu version
     public static void Postfix(VersionShower __instance)
     {
-        if (MalumMenu.supportedAU.Contains(Application.version)){ // Checks if Among Us version is supported
+        if (IdkMenu.supportedAU.Contains(Application.version)){ // Checks if Among Us version is supported
 
-            __instance.text.text =  $"MalumMenu v{MalumMenu.malumVersion} (v{Application.version})"; // Supported
+            __instance.text.text =  $"IdkMenu v{IdkMenu.malumVersion} (v{Application.version})"; // Supported
         
         }else{
 
-            __instance.text.text =  $"MalumMenu v{MalumMenu.malumVersion} (<color=red>v{Application.version}</color>)"; //Unsupported
-        
+            __instance.text.text =  $"IdkMenu v{IdkMenu.malumVersion} (<color=red>v{Application.version}</color>)"; //Unsupported
+
         }
     }
 }
@@ -126,12 +126,12 @@ public static class PingTracker_Update
 
             __instance.aspectPosition.DistanceFromEdge = new Vector3(-0.21f, 0.50f, 0f);
 
-            __instance.text.text = $"MalumMenu by scp222thj ~ {Utils.getColoredPingText(AmongUsClient.Instance.Ping)}";
+            __instance.text.text = $"IdkMenu by scp222thj ~ {Utils.getColoredPingText(AmongUsClient.Instance.Ping)}";
             
             return;
         }
 
-        __instance.text.text = $"MalumMenu by scp222thj\n{Utils.getColoredPingText(AmongUsClient.Instance.Ping)}";
+        __instance.text.text = $"IdkMenu by scp222thj\n{Utils.getColoredPingText(AmongUsClient.Instance.Ping)}";
         
     }
 }

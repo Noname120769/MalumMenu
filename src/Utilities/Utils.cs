@@ -9,7 +9,7 @@ using AmongUs.GameOptions;
 using Sentry.Internal.Extensions;
 using Il2CppSystem.Net.NetworkInformation;
 
-namespace MalumMenu;
+namespace IdkMenu;
 public static class Utils
 {
     //Useful for getting full lists of all the Among Us cosmetics IDs

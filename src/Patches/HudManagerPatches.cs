@@ -1,7 +1,7 @@
 using HarmonyLib;
 using System;
 
-namespace MalumMenu;
+namespace IdkMenu;
 
 [HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
 public static class HudManager_Start

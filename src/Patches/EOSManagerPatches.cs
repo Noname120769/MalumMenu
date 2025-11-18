@@ -2,7 +2,7 @@ using AmongUs.Data.Player;
 using BepInEx;
 using HarmonyLib;
 
-namespace MalumMenu;
+namespace IdkMenu;
 
 [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.StartInitialLoginFlow))]
 public static class EOSManager_StartInitialLoginFlow
@@ -15,7 +15,7 @@ public static class EOSManager_StartInitialLoginFlow
         __instance.DeleteDeviceID(new System.Action(__instance.EndMergeGuestAccountFlow));
         
         // Log into a new temp account if the user is playing in guest mode
-        if (!MalumMenu.guestMode.Value) return true;
+        if (!IdkMenu.guestMode.Value) return true;
         __instance.StartTempAccountFlow();
         __instance.CloseStartupWaitScreen();
 

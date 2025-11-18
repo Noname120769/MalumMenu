@@ -1,4 +1,4 @@
-namespace MalumMenu
+namespace IdkMenu
 {
     public struct CheatToggles
     {

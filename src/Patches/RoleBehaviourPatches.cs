@@ -5,7 +5,7 @@ using UnityEngine;
 using Sentry.Internal.Extensions;
 using AmongUs.GameOptions;
 
-namespace MalumMenu;
+namespace IdkMenu;
 
 [HarmonyPatch(typeof(EngineerRole), nameof(EngineerRole.FixedUpdate))]
 public static class EngineerRole_FixedUpdate
